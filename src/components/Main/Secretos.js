@@ -1,27 +1,30 @@
 import "./secreto.css";
 import Secreto from "../Secreto/Secreto";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import fechaAhora from "../../utils/Fecha";
-
-const secretoss = [
-  {
-    fecha: fechaAhora(),
-    secreto: "Secreto 1",
-  },
-  {
-    fecha: fechaAhora(),
-    secreto: "Secreto 2",
-  },
-];
+import firebase from "../../firebase.js";
 
 const Secretos = () => {
   const [secreto, setSecreto] = useState("");
-  const [secretos, setSecretos] = useState(secretoss);
+  const [secretos, setSecretos] = useState([]);
+
+  useEffect(() => {
+    return firebase.collection("secretos").onSnapshot((secreto) => {
+      const secretoss = [];
+
+      secreto.forEach((doc) =>
+        secretoss.push({ fecha: fechaAhora(), secreto: doc.data().secreto })
+      );
+      console.log(secretoss);
+      setSecretos(secretoss);
+    });
+  }, []);
+  
 
   const enviar = (e) => {
     e.preventDefault();
-    secretoss.push({ fecha: fechaAhora(), secreto: secreto });
-    setSecretos(secretoss);
+    // secretoss.push({ fecha: fechaAhora(), secreto: secreto });
+    // setSecretos(secretoss);
     setSecreto("");
   };
 
