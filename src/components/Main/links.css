@@ -1,0 +1,25 @@
+
+
+main ul {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+main ul li {
+  list-style: none;
+  /* color: #1868c6; */
+  color: #1e84d8;
+  font-weight: 700;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+main ul li span{
+  margin-left: 10px;
+}
+
+
+main .col-iz {
+  width: 30%;
+  display: flex;
+}
