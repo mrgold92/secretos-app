@@ -1,0 +1,33 @@
+.flashMessage {
+  padding: 15px;
+  width: 190px;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 29%);
+  position: absolute;
+  top: 40px;
+  left: 40px;
+
+  -webkit-animation: fadeIn 2.5s linear ;
+  animation: fadeIn 2.5s linear ;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  50% { opacity: 1; }
+}
+@keyframes fadeIn {
+  50% { opacity: 1; }
+}
+
+.flashMessage.success {
+  background: #6ed15a;
+}
+
+.flashMessage.error {
+  background: #d15a5a;
+}
+.flashMessage span {
+  font-size: 1rem;
+}
