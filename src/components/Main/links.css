@@ -1,4 +1,4 @@
-
+@import "../css/vars.css";
 
 main ul {
   padding: 0;
@@ -8,18 +8,21 @@ main ul {
 main ul li {
   list-style: none;
   /* color: #1868c6; */
-  color: #1e84d8;
+  color: var(--text-color);
   font-weight: 700;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-main ul li span{
+main ul li span {
   margin-left: 10px;
 }
-
 
 main .col-iz {
   width: 30%;
   display: flex;
+}
+
+body.dark-theme main ul li {
+  --text-color: #96ef96;
 }
