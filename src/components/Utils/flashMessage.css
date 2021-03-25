@@ -8,17 +8,20 @@
   position: absolute;
   top: 40px;
   left: 40px;
-
-  -webkit-animation: fadeIn 2.5s linear ;
-  animation: fadeIn 2.5s linear ;
+  -webkit-animation: fadeIn 2.5s linear;
+  animation: fadeIn 2.5s linear;
   opacity: 0;
 }
 
 @-webkit-keyframes fadeIn {
-  50% { opacity: 1; }
+  50% {
+    opacity: 1;
+  }
 }
 @keyframes fadeIn {
-  50% { opacity: 1; }
+  50% {
+    opacity: 1;
+  }
 }
 
 .flashMessage.success {
